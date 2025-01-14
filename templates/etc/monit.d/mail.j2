@@ -18,7 +18,7 @@ set mailserver {{ monit_mail.host }} port {{ monit_mail.port }}
 set alert {{ address }}
   {% endfor %}
 
-  {% if monit_alert.mail_format is defined and monit_mail.mail_format %}
+  {% if monit_alert.mail_format is defined and monit_alert.mail_format %}
 set mail-format {
     {% for key in ['from', 'reply-to', 'subject', 'message'] %}
       {% if monit_alert.mail_format[key] is defined %}
